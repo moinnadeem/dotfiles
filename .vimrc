@@ -13,6 +13,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'valloric/youcompleteme'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'arcticicestudio/nord-vim'
+Plugin 'rhysd/vim-clang-format'
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
 " " plugin on GitHub repo
@@ -61,6 +62,26 @@ set autoindent
 set smartindent
 set mouse=a
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+let g:clang_format#auto_format=1
+autocmd FileType c ClangFormatAutoEnable
+let g:clang_format#auto_format_on_insert_leave=1
+set autoread
+nmap <leader>w :w!<cr>
+
+set hidden
+set history=100
+set scrolloff=10
+set showcmd
+set wildmenu
+set wildmode=longest:full,full
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showmatch
+set mat=2 " blink for 2/10 of a second when matching brackets
+
 
 augroup project
     autocmd!
