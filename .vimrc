@@ -15,6 +15,8 @@ Plugin 'valloric/youcompleteme'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'lifepillar/vim-solarized8'
+Plugin 'fisadev/vim-isort'
+
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
 " " plugin on GitHub repo
@@ -63,11 +65,6 @@ set autoindent
 set smartindent
 set mouse=a
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-augroup project
-    autocmd!
-    autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
-augroup END
 set background=dark
 set hlsearch
 set incsearch
@@ -89,3 +86,4 @@ python3 powerline_setup()
 python3 del powerline_setup
 set showtabline=2 " Always display the tabline, even if there is only one tab
 nnoremap <F9> :!%:p<Enter><Enter>
+set iskeyword-=_
