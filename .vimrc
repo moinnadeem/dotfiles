@@ -1,6 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
+set encoding=utf-8
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -9,11 +9,14 @@ call vundle#begin()
 "
 " " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'dense-analysis/ale'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'valloric/youcompleteme'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'arcticicestudio/nord-vim'
-Plugin 'rhysd/vim-clang-format'
+Plugin 'lifepillar/vim-solarized8'
+Plugin 'fisadev/vim-isort'
+
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
 " " plugin on GitHub repo
@@ -47,10 +50,10 @@ filetype plugin indent on    " required
 " "
 " " see :h vundle for more details or wiki for FAQ
 " " Put your non-Plugin stuff after this line
-
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_working_path_mode = 'ra'
+let g:ale_python_flake8_options = '--max-line-length=110' 
 map <C-M> :w<CR> :!clear; make<CR> 
 set expandtab
 set shiftwidth=2
@@ -62,30 +65,25 @@ set autoindent
 set smartindent
 set mouse=a
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-let g:clang_format#auto_format=1
-autocmd FileType c ClangFormatAutoEnable
-let g:clang_format#auto_format_on_insert_leave=1
-set autoread
-nmap <leader>w :w!<cr>
-
-set hidden
-set history=100
-set scrolloff=10
-set showcmd
-set wildmenu
-set wildmode=longest:full,full
+set background=dark
 set hlsearch
 set incsearch
-set ignorecase
-set smartcase
-set showmatch
-set mat=2 " blink for 2/10 of a second when matching brackets
+"colorscheme nord 
+"
+let g:ale_enabled = 0
+let b:ale_fixers = ["autopep8", 'isort', "remove_trailing_lines", 'trim_whitespace']
+"let b:ale_fix_on_save = 1
 
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+let g:ctrlp_clear_cache_on_exit = 0
 
-augroup project
-    autocmd!
-    autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
-augroup END
-set background=dark
-colorscheme nord 
+python3 import sys; sys.path.append("/home/gridsan/mnadeem/anaconda3/lib/python3.7/site-packages")
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+set showtabline=2 " Always display the tabline, even if there is only one tab
+nnoremap <F9> :!%:p<Enter><Enter>
+set iskeyword-=_
