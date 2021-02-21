@@ -70,9 +70,15 @@ set hlsearch
 set incsearch
 "colorscheme nord 
 "
-let g:ale_enabled = 0
-let b:ale_fixers = ["autopep8", 'isort', "remove_trailing_lines", 'trim_whitespace']
-"let b:ale_fix_on_save = 1
+let g:ale_enabled = 1
+let g:ale_fixers = ["autopep8", 'isort', "remove_trailing_lines", 'trim_whitespace']
+let g:ale_linters = {
+      \   'python': ['flake8'],
+      \   'ruby': ['standardrb', 'rubocop'],
+      \   'javascript': ['eslint'],
+      \}
+let g:ale_fix_on_save = 0
+let g:ale_python_flake8_options = '--ignore=E402 --max-line-length=140'
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
