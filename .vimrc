@@ -55,6 +55,8 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ale_python_flake8_options = '--max-line-length=110' 
 map <C-M> :w<CR> :!clear; make<CR> 
+imap jk <Esc>  
+imap kj <Esc>  
 set expandtab
 set shiftwidth=2
 set tabstop=2
@@ -71,14 +73,16 @@ set incsearch
 "colorscheme nord 
 "
 let g:ale_enabled = 1
-let g:ale_fixers = ["autopep8", 'isort', "remove_trailing_lines", 'trim_whitespace']
+let g:ale_fixers = {'python': ["autopep8", 'isort', "remove_trailing_lines", 'trim_whitespace']}
 let g:ale_linters = {
       \   'python': ['flake8'],
       \   'ruby': ['standardrb', 'rubocop'],
       \   'javascript': ['eslint'],
       \}
 let g:ale_fix_on_save = 0
-let g:ale_python_flake8_options = '--ignore=E402 --max-line-length=140'
+let g:ale_python_flake8_options = '--ignore=E402,PAI201,PAI202 --max-line-length=140'
+let g:ale_python_autopep8_options = '--select=E,W'
+nmap <silent> <C-e> <Plug>(ale_next_wrap)
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
