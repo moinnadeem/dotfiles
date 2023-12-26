@@ -6,6 +6,10 @@
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
 
+- create:
+  ~/.tmux/plugins:
+    mode: 0775
+
 - shell:
   - [git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim, Installing Vundle]
   - [vim +PluginInstall +qall, Installing Vim Plugins]
