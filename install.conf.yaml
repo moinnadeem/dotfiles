@@ -15,3 +15,4 @@
   - [git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim, Installing Vundle]
   - [vim +PluginInstall +qall, Installing Vim Plugins]
   - [cd ~/.vim/bundle/youcompleteme && python3 install.py, Installing YouCompleteMe]
+  - [sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)", Installing Oh-My-Zsh]
