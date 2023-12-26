@@ -7,4 +7,5 @@
     ~/.zshrc: zshrc
 
 - shell:
-  - [vim +PluginInstall +qall, Installing Vim Plugins...]
+  - [git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim, Installing Vundle]
+  - [vim +PluginInstall +qall, Installing Vim Plugins]
