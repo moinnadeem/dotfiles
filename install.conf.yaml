@@ -5,3 +5,6 @@
     ~/.tmux.conf: tmux.conf
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
+
+- shell:
+  - [vim +PluginInstall +qall, Installing Vim Plugins...]
