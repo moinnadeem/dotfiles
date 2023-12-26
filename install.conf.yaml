@@ -1,14 +1,14 @@
 - clean: ['~']
 
 - link:
-  ~/.gitconfig: gitconfig
-  ~/.tmux.conf: tmux.conf
-  ~/.vimrc: vimrc
-  ~/.zshrc: zshrc
+    ~/.gitconfig: gitconfig
+    ~/.tmux.conf: tmux.conf
+    ~/.vimrc: vimrc
+    ~/.zshrc: zshrc
 
 - create:
-  ~/.tmux/plugins:
-    mode: 0775
+    ~/.tmux/plugins:
+      mode: 0775
 
 - shell:
   - [sudo apt install -y $(cat apt_packages.list), Installing APT Packages]
