@@ -11,7 +11,7 @@
       mode: 0775
 
 - shell:
-  - [sudo apt install -y $(cat apt_packages.list), Installing APT Packages]
+  - [sudo apt update && apt install -y $(cat apt_packages.list), Installing APT Packages]
   - [git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim, Installing Vundle]
   - [vim +PluginInstall +qall, Installing Vim Plugins]
   - [cd ~/.vim/bundle/youcompleteme && python3 install.py, Installing YouCompleteMe]
