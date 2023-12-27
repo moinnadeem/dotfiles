@@ -16,3 +16,4 @@
   - [vim +PluginInstall +qall, Installing Vim Plugins]
   - [cd ~/.vim/bundle/youcompleteme && python3 install.py, Installing YouCompleteMe]
   - [sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)", Installing Oh-My-Zsh]
+  - [git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k, Installing Powerlevel10k]
