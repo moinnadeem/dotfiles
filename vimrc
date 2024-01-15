@@ -16,6 +16,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'fisadev/vim-isort'
+Plugin 'psf/black'
 
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
@@ -73,14 +74,14 @@ set incsearch
 "colorscheme nord 
 "
 let g:ale_enabled = 1
-let g:ale_fixers = {'python': ["autopep8", 'isort', "remove_trailing_lines", 'trim_whitespace']}
+let g:ale_fixers = {'python': ["black", 'isort', "remove_trailing_lines", 'trim_whitespace']}
 let g:ale_linters = {
       \   'python': ['flake8'],
       \   'ruby': ['standardrb', 'rubocop'],
       \   'javascript': ['eslint'],
       \}
 let g:ale_fix_on_save = 0
-let g:ale_python_flake8_options = '--ignore=E402,PAI201,PAI202 --max-line-length=140'
+let g:ale_python_flake8_options = '--ignore=E203,E402,PAI201,PAI202,W503 --max-line-length=140'
 let g:ale_python_autopep8_options = '--select=E,W'
 nmap <silent> <C-e> <Plug>(ale_next_wrap)
 
