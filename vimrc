@@ -16,6 +16,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'fisadev/vim-isort'
+Plugin 'psf/black'
 
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
