@@ -70,6 +70,7 @@ set mouse=a
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set background=dark
 set hlsearch
+set cindent
 set incsearch
 "colorscheme nord 
 "
